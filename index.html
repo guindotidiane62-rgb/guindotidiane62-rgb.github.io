@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Academic website of Tidiane Guindo, Economist specializing in Applied Microeconometrics, Innovation Economics, and Causal Inference." />
+  <title>Tidiane Guindo — Economist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1a1714;
+      --ink-soft: #3d3730;
+      --ink-muted: #7a6f65;
+      --cream: #faf7f2;
+      --cream-dark: #f0ebe2;
+      --accent: #8b3a2a;
+      --accent-light: #c0604a;
+      --gold: #b5892f;
+      --rule: #d6cec3;
+      --max: 760px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Source Serif 4', Georgia, serif;
+      background: var(--cream);
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    /* ── HEADER / NAV ── */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--cream);
+      border-bottom: 1px solid var(--rule);
+      padding: 0 2rem;
+    }
+    nav {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 52px;
+    }
+    .nav-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: .03em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+    .nav-links a {
+      font-size: .83rem;
+      font-weight: 400;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── MAIN LAYOUT ── */
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 2rem 5rem;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 168px;
+      gap: 3rem;
+      align-items: start;
+      padding: 4rem 0 3rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -.01em;
+      margin-bottom: .5rem;
+    }
+    .hero-text .tagline {
+      font-size: .9rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 400;
+      margin-bottom: 1.4rem;
+    }
+    .hero-text p {
+      color: var(--ink-soft);
+      font-size: 1rem;
+      margin-bottom: 1.1rem;
+      max-width: 520px;
+    }
+    .hero-links { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.4rem; }
+    .hero-links a {
+      display: inline-block;
+      font-size: .78rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: .45rem 1.1rem;
+      border: 1px solid currentColor;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background .2s, color .2s;
+    }
+    .btn-primary { color: var(--accent); }
+    .btn-primary:hover { background: var(--accent); color: #fff; }
+    .btn-secondary { color: var(--ink-muted); }
+    .btn-secondary:hover { background: var(--ink-muted); color: #fff; }
+
+    .avatar-wrap { text-align: right; padding-top: .4rem; }
+    .avatar-wrap .avatar-img {
+      width: 148px; height: 148px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 3px solid var(--rule);
+      box-shadow: 0 4px 18px rgba(0,0,0,.12);
+      display: block;
+    }
+    .avatar-wrap .caption {
+      margin-top: .6rem;
+      font-size: .75rem;
+      color: var(--ink-muted);
+      letter-spacing: .05em;
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 3rem 0 0; }
+    section + section { border-top: 1px solid var(--rule); margin-top: 2.5rem; }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: .02em;
+      margin-bottom: 1.6rem;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+    }
+    h2::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      font-style: italic;
+      color: var(--ink);
+      margin-bottom: .2rem;
+    }
+
+    p { color: var(--ink-soft); }
+
+    /* ── ABOUT ── */
+    .about-body { display: grid; gap: 1rem; }
+    .about-body p { font-size: 1rem; }
+
+    /* ── RESEARCH ── */
+    .paper-list { display: flex; flex-direction: column; gap: 2.2rem; }
+    .paper {
+      position: relative;
+      padding-left: 1.2rem;
+      border-left: 2px solid var(--cream-dark);
+      transition: border-color .2s;
+    }
+    .paper:hover { border-left-color: var(--accent); }
+    .paper-title {
+      font-weight: 500;
+      color: var(--ink);
+      font-size: 1rem;
+      line-height: 1.45;
+      margin-bottom: .3rem;
+    }
+    .paper-meta {
+      font-size: .82rem;
+      color: var(--ink-muted);
+      letter-spacing: .03em;
+      margin-bottom: .5rem;
+    }
+    .paper-abstract {
+      font-size: .9rem;
+      color: var(--ink-soft);
+      line-height: 1.65;
+    }
+    .paper-links { margin-top: .6rem; display: flex; gap: .8rem; flex-wrap: wrap; }
+    .paper-links a {
+      font-size: .75rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color .15s;
+    }
+    .paper-links a:hover { border-bottom-color: var(--accent); }
+
+    .wip-badge {
+      display: inline-block;
+      font-size: .68rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .15rem .55rem;
+      border-radius: 2px;
+      background: var(--cream-dark);
+      color: var(--ink-muted);
+      font-weight: 500;
+      vertical-align: middle;
+      margin-left: .4rem;
+    }
+
+    /* ── PUBLICATIONS ── */
+    .pub-list { display: flex; flex-direction: column; gap: 1.3rem; }
+    .pub {
+      padding-left: 1.2rem;
+      border-left: 2px solid var(--cream-dark);
+      transition: border-color .2s;
+    }
+    .pub:hover { border-left-color: var(--gold); }
+    .pub-title { font-size: .97rem; color: var(--ink); font-weight: 400; line-height: 1.5; }
+    .pub-venue { font-size: .83rem; color: var(--ink-muted); margin-top: .15rem; }
+    .pub-venue a { color: var(--accent); text-decoration: none; }
+    .pub-venue a:hover { text-decoration: underline; }
+
+    .pub-section-label {
+      font-size: .75rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      font-weight: 500;
+      margin: 1.8rem 0 .8rem;
+      padding-bottom: .4rem;
+      border-bottom: 1px dashed var(--rule);
+    }
+
+    /* ── EDUCATION ── */
+    .edu-list { display: flex; flex-direction: column; gap: 1.6rem; }
+    .edu-item {}
+    .edu-degree { font-size: 1rem; font-weight: 500; color: var(--ink); }
+    .edu-institution { font-size: .92rem; color: var(--ink-soft); }
+    .edu-detail { font-size: .83rem; color: var(--ink-muted); margin-top: .15rem; }
+
+    /* ── EXPERIENCE ── */
+    .exp-list { display: flex; flex-direction: column; gap: 1.6rem; }
+    .exp-item {}
+    .exp-role { font-size: 1rem; font-weight: 500; color: var(--ink); }
+    .exp-org { font-size: .92rem; color: var(--ink-soft); }
+    .exp-detail { font-size: .88rem; color: var(--ink-muted); margin-top: .25rem; line-height: 1.6; }
+
+    /* ── PRESENTATIONS / TRAINING ── */
+    .list-plain { display: flex; flex-direction: column; gap: .9rem; }
+    .list-item { font-size: .93rem; color: var(--ink-soft); padding-left: 1.2rem; position: relative; }
+    .list-item::before { content: '–'; position: absolute; left: 0; color: var(--accent); }
+
+    /* ── SKILLS ── */
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem 2.5rem; }
+    .skill-group {}
+    .skill-label { font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 500; color: var(--accent); margin-bottom: .3rem; }
+    .skill-items { font-size: .9rem; color: var(--ink-soft); }
+
+    /* ── CONTACT ── */
+    .contact-body { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 3rem; }
+    .contact-row { font-size: .93rem; color: var(--ink-soft); }
+    .contact-row strong { color: var(--ink); font-weight: 500; display: block; font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; margin-bottom: .15rem; }
+    .contact-row a { color: var(--accent); text-decoration: none; }
+    .contact-row a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 2rem;
+      text-align: center;
+      font-size: .78rem;
+      color: var(--ink-muted);
+      letter-spacing: .04em;
+      max-width: var(--max);
+      margin: 3rem auto 0;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 600px) {
+      .hero { grid-template-columns: 1fr; }
+      .avatar-wrap { display: none; }
+      .contact-body { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
+      nav { gap: .5rem; }
+      .nav-links { gap: 1rem; }
+    }
+
+    /* ── FADE-IN ANIMATION ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero { animation: fadeUp .7s ease both; }
+    section { animation: fadeUp .7s ease both; animation-fill-mode: both; }
+    section:nth-of-type(2) { animation-delay: .05s; }
+    section:nth-of-type(3) { animation-delay: .1s; }
+    section:nth-of-type(4) { animation-delay: .15s; }
+    section:nth-of-type(5) { animation-delay: .2s; }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a class="nav-brand" href="#">Tidiane Guindo</a>
+    <ul class="nav-links">
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#education">Background</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ── HERO ── -->
+  <div class="hero">
+    <div class="hero-text">
+      <p class="tagline">Applied Microeconomics · Innovation · Causal Inference</p>
+      <h1>Tidiane Guindo</h1>
+      <p>
+        I am an economist working on applied microeconometrics and causal inference, 
+        with a focus on innovation economics and industrial policy. I use administrative 
+        microdata and quasi-experimental methods to study policy design, targeting, 
+        and interactions affecting firm behavior and performance.
+      </p>
+      <p>
+        I am a Graduate Research Fellow at <strong>Andalas University</strong> (Padang, Indonesia), 
+        where I am completing a Master of Economics in Public Policy 
+        (expected June 2026), and hold a Master of Innovation Management (Cum Laude, 4.0 GPA) 
+        from Sumbawa University of Technology.
+      </p>
+      <div class="hero-links">
+        <a class="btn-primary" href="mailto:guindotidiane62@gmail.com">Email Me</a>
+        <a class="btn-secondary" href="https://researchgate.net/profile/Tidiane-Guindo-2" target="_blank" rel="noopener">ResearchGate</a>
+      </div>
+    </div>
+    <div class="avatar-wrap">
+      <img src="data:image/jpeg;base64,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" alt="Tidiane Guindo" class="avatar-img" />
+      <p class="caption">Padang, Indonesia</p>
+    </div>
+  </div>
+
+  <!-- ── RESEARCH ── -->
+  <section id="research">
+    <h2>Research</h2>
+    <div class="paper-list">
+
+      <div class="paper">
+        <p class="paper-title">
+          Causal Identification of R&amp;D Policy Effectiveness using Regression Discontinuity Designs (ASEAN)
+          <span class="wip-badge">Work in Progress</span>
+        </p>
+        <p class="paper-meta">Quasi-experimental methods · Sharp, Fuzzy, and Geographic RDD</p>
+        <p class="paper-abstract">
+          Estimates the causal impact of R&amp;D expenditure thresholds and public funding on firm-level 
+          innovation, productivity, and knowledge spillovers across ASEAN economies, using sharp, 
+          fuzzy, and geographic regression discontinuity designs.
+        </p>
+      </div>
+
+      <div class="paper">
+        <p class="paper-title">
+          Firm Exposure and Policy Transmission in ASEAN Economies
+          <span class="wip-badge">Work in Progress</span>
+        </p>
+        <p class="paper-meta">Panel data methods · Heterogeneous firm responses</p>
+        <p class="paper-abstract">
+          Studies heterogeneous firm responses to macroeconomic policy using panel data methods, 
+          analyzing how different firm characteristics mediate the transmission of policy shocks 
+          to investment and productivity outcomes.
+        </p>
+      </div>
+
+      <div class="paper">
+        <p class="paper-title">
+          Who Absorbs External Shocks? Foreign Exchange Intervention, Monetary Policy, and Stabilization 
+          Trade-offs: A DSGE Study of ASEAN Economies
+        </p>
+        <p class="paper-meta">
+          <em>SN Business &amp; Economics</em>, 6, 52 (Springer Nature), 2026
+        </p>
+        <p class="paper-abstract">
+          Analyzes stabilization trade-offs between foreign exchange intervention and monetary policy 
+          in ASEAN economies using a Dynamic Stochastic General Equilibrium framework, examining 
+          which institutions absorb external shocks and at what cost.
+        </p>
+        <div class="paper-links">
+          <a href="https://doi.org/10.1007/s43546-026-00745-x" target="_blank" rel="noopener">DOI ↗</a>
+        </div>
+      </div>
+
+      <div class="paper">
+        <p class="paper-title">
+          ICT Adoption, Innovation, and Labor Productivity in ASEAN
+        </p>
+        <p class="paper-meta">
+          With Harjito · <em>Wab Academia Journal of Social Sciences</em>, 4(2), 28–54, 2025
+        </p>
+        <p class="paper-abstract">
+          Examines the joint effects of ICT adoption and innovation on labor productivity across 
+          ASEAN economies using panel data analysis, identifying complementarities and 
+          country-level heterogeneity. Presented at the 9th SANEM Annual Economists' Conference 
+          (Dhaka, Bangladesh, April 2026).
+        </p>
+        <div class="paper-links">
+          <a href="#publications">See full publication list ↓</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── PUBLICATIONS ── -->
+  <section id="publications">
+    <h2>Publications</h2>
+
+    <p class="pub-section-label">Peer-Reviewed Articles</p>
+    <div class="pub-list">
+
+      <div class="pub">
+        <p class="pub-title">Who Absorbs External Shocks? Foreign Exchange Intervention, Monetary Policy, and Stabilization Trade-offs: A DSGE Study of ASEAN Economies</p>
+        <p class="pub-venue"><em>SN Business &amp; Economics</em> (Springer Nature), 6, 52 · 2026</p>
+      </div>
+
+      <div class="pub">
+        <p class="pub-title">Institutional Thresholds, Multidimensional SDG Performance, and the Structural Determinants of Development Gaps in Sub-Saharan Africa</p>
+        <p class="pub-venue"><em>Wah Academia Journal of Social Sciences</em>, 5(1), 503–531 · 2026</p>
+      </div>
+
+      <div class="pub">
+        <p class="pub-title">Gender Disparities in Science Labor Supply: Evidence <span style="font-style:italic; font-size:.85em;">(with M.J. Elpisa &amp; N. Bachtiar)</span></p>
+        <p class="pub-venue"><em>International Journal of Economics (IJEC)</em>, 4(2), 780–793 · 2025</p>
+      </div>
+
+      <div class="pub">
+        <p class="pub-title">ICT Adoption, Innovation, and Labor Productivity in ASEAN <span style="font-style:italic; font-size:.85em;">(with Harjito)</span></p>
+        <p class="pub-venue"><em>Wab Academia Journal of Social Sciences</em>, 4(2), 28–54 · 2025</p>
+      </div>
+
+      <div class="pub">
+        <p class="pub-title">Breakthrough Policy and the Vicious Circle of Poverty: A Case Study of Indonesia <span style="font-style:italic; font-size:.85em;">(with M.B. Hak &amp; F. Tan)</span></p>
+        <p class="pub-venue"><em>Frontiers in Business and Economics</em>, 4(1), 1–9 · 2025</p>
+      </div>
+
+      <div class="pub">
+        <p class="pub-title">Global Standards versus Local Realities: Institutional Pathways of Public-Private Partnerships in Ghana and Mali</p>
+        <p class="pub-venue"><em>International Journal of Advances in Social Sciences and Humanities</em>, 4(3), 132–144 · 2025</p>
+      </div>
+
+      <div class="pub">
+        <p class="pub-title">Assessing the Effectiveness of Agricultural Policies on Development: A Systematic Review <span style="font-style:italic; font-size:.85em;">(with M.B. Hak)</span></p>
+        <p class="pub-venue"><em>E3S Web of Conferences</em>, 475, 04001 · 2024 · <span style="color: var(--gold);">Scopus-indexed</span></p>
+      </div>
+
+      <div class="pub">
+        <p class="pub-title">Long-run Relationship between Public Debt and Economic Growth: Evidence from Mali <span style="font-style:italic; font-size:.85em;">(with B. Muhammad)</span></p>
+        <p class="pub-venue"><em>Frontiers in Business and Economics</em>, 3(3), 199–210 · 2024</p>
+      </div>
+
+      <div class="pub">
+        <p class="pub-title">Government Finance in Mali: Revenue, Expenditure, and Policy Implications</p>
+        <p class="pub-venue"><em>International Journal of Finance, Economics and Business</em>, 3(4), 242–257 · 2024</p>
+      </div>
+
+      <div class="pub">
+        <p class="pub-title">Determinants of Smallholder Farmer Food Security in Mali Amidst Climate Change <span style="font-style:italic; font-size:.85em;">(with M. Nurjihadi)</span></p>
+        <p class="pub-venue"><em>AGROTEK503</em>, 34(1), 1–13 · 2024</p>
+      </div>
+
+      <div class="pub">
+        <p class="pub-title">Willingness to Pay for Conservation in Moyo Satonda National Park, Indonesia</p>
+        <p class="pub-venue"><em>International Journal of Multidisciplinary</em>, 06(09), 4505–4509 · 2023</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── EDUCATION ── -->
+  <section id="education">
+    <h2>Education</h2>
+    <div class="edu-list">
+      <div class="edu-item">
+        <p class="edu-degree">Master of Economics (Public Policy)</p>
+        <p class="edu-institution">Andalas University · Padang, Indonesia · 2024 – Present</p>
+        <p class="edu-detail">GPA: 3.78 / 4.0 · Expected June 2026 · Full Graduate Scholarship<br>
+        Advisors: Prof. Syafruddin Karimi &amp; Assoc. Prof. Hefrizal Handra<br>
+        Coursework: Advanced Microeconomics, Econometrics (Time Series &amp; Panel), Mathematical Economics, Public Finance</p>
+      </div>
+      <div class="edu-item">
+        <p class="edu-degree">Master of Innovation Management</p>
+        <p class="edu-institution">Sumbawa University of Technology · 2023 – 2025</p>
+        <p class="edu-detail">GPA: 4.0 / 4.0 · Cum Laude · Full Scholarship<br>
+        Focus: Innovation economics, impact evaluation, technology adoption</p>
+      </div>
+      <div class="edu-item">
+        <p class="edu-degree">Bachelor of Economics (Development Economics)</p>
+        <p class="edu-institution">Sumbawa University of Technology · 2020 – 2024</p>
+        <p class="edu-detail">GPA: 3.70 / 4.0 · Cum Laude</p>
+      </div>
+    </div>
+
+    <br>
+    <h2 style="margin-top:2rem;">Research Experience</h2>
+    <div class="exp-list">
+      <div class="exp-item">
+        <p class="exp-role">Graduate Research Fellow</p>
+        <p class="exp-org">Andalas University, Indonesia · 2024 – Present</p>
+        <p class="exp-detail">Developing quantitative models (DSGE and regime-switching) to analyze macroeconomic policy dynamics and public debt sustainability. Conducting causal empirical analysis using RDD to evaluate R&amp;D policy impacts on firm-level innovation, productivity, and knowledge spillovers.</p>
+      </div>
+      <div class="exp-item">
+        <p class="exp-role">Research Collaborator</p>
+        <p class="exp-org">CURES Mali · 2024 – Present <span style="font-size:.82rem; color: var(--ink-muted);">(with Falinguè Keïta)</span></p>
+        <p class="exp-detail">Analyzing high-frequency data to study policy transmission to firms; assessing policy impacts on investment and productivity.</p>
+      </div>
+      <div class="exp-item">
+        <p class="exp-role">Economic Research Analyst</p>
+        <p class="exp-org">PT BISI International, Indonesia · 2023 – 2024</p>
+        <p class="exp-detail">Firm-level empirical analysis using panel data methods to evaluate productivity and technology adoption in the agricultural sector.</p>
+      </div>
+    </div>
+
+    <br>
+    <h2 style="margin-top:2rem;">Teaching &amp; Service</h2>
+    <div class="list-plain">
+      <div class="list-item">Volunteer Economics Instructor – University of Mataram (2023): developed introductory econometrics materials</div>
+      <div class="list-item">Keynote Speaker – National Innovation Management Seminar, Sumbawa University of Technology (2025)</div>
+      <div class="list-item">Conference Moderator – 1st International Conference on Economic Issues, University of Mataram (2023)</div>
+    </div>
+
+    <br>
+    <h2 style="margin-top:2rem;">Conference Presentations</h2>
+    <div class="list-plain">
+      <div class="list-item"><strong>ICT Adoption, Innovation, and Labor Productivity in ASEAN.</strong> 9th SANEM Annual Economists' Conference (9SAEC), Dhaka, Bangladesh — April 2026</div>
+      <div class="list-item"><strong>Predictive Model of Tourist Arrivals.</strong> MIICEMA Conference, Universitas Sriwijaya, Indonesia — September 2025</div>
+      <div class="list-item"><strong>Agricultural Policies and Development.</strong> International Conference on Applied Sciences (InCASST), Yogyakarta, Indonesia — October 2023</div>
+    </div>
+
+    <br>
+    <h2 style="margin-top:2rem;">Training &amp; Certifications</h2>
+    <div class="list-plain">
+      <div class="list-item">IMF Institute: Macroeconometric Forecasting (60 hrs) · August 2025</div>
+      <div class="list-item">IMF Institute: Macroeconomic Diagnostics (36 hrs) · August 2025</div>
+      <div class="list-item">IMF Institute: Public Debt, Investment &amp; Growth — DIG/DIGNAR Models (4 hrs) · June 2025</div>
+      <div class="list-item">NVivo Certification, Andalas University · May 2025</div>
+      <div class="list-item">IMF: LIC Debt Sustainability Framework; Macroeconometric Forecasting</div>
+      <div class="list-item">Bahasa Indonesia Language &amp; Cultural Course (FBICC), ITS Surabaya · 2022–2023</div>
+    </div>
+
+    <br>
+    <h2 style="margin-top:2rem;">Methods &amp; Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <p class="skill-label">Applied Econometrics</p>
+        <p class="skill-items">DiD, Panel Data, RDD, Causal Inference, Policy Evaluation</p>
+      </div>
+      <div class="skill-group">
+        <p class="skill-label">Programming</p>
+        <p class="skill-items">Stata, R, Python, EViews</p>
+      </div>
+      <div class="skill-group">
+        <p class="skill-label">Structural Methods</p>
+        <p class="skill-items">DSGE Modeling, VAR/SVAR, Regime-Switching Models</p>
+      </div>
+      <div class="skill-group">
+        <p class="skill-label">Tools &amp; Writing</p>
+        <p class="skill-items">LaTeX, NVivo</p>
+      </div>
+      <div class="skill-group">
+        <p class="skill-label">Languages</p>
+        <p class="skill-items">French (native), English (fluent), Bahasa Indonesia (proficient), Czech &amp; German (basic)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-body">
+      <div class="contact-row">
+        <strong>Email</strong>
+        <a href="mailto:guindotidiane62@gmail.com">guindotidiane62@gmail.com</a>
+      </div>
+      <div class="contact-row">
+        <strong>Phone</strong>
+        +62 8311 1999 5992
+      </div>
+      <div class="contact-row">
+        <strong>Location</strong>
+        Padang, West Sumatra, Indonesia
+      </div>
+      <div class="contact-row">
+        <strong>ResearchGate</strong>
+        <a href="https://researchgate.net/profile/Tidiane-Guindo-2" target="_blank" rel="noopener">Tidiane-Guindo-2 ↗</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © Tidiane Guindo 2026 &nbsp;·&nbsp; Padang, West Sumatra, Indonesia
+</footer>
+
+</body>
+</html>
